@@ -1,0 +1,51 @@
+
+Para crear un entorno con python:
+
+$ python3 -m venv usersdj 
+
+Activar entorno:
+
+$ source usersdj/bin/activate
+
+Instalar django:
+
+$ pip install django
+
+Iniciar un projecto de django:
+
+$ django-admin startproject usuarios
+
+
+Para visualizar los paquetes instalados en un entorno virtual de python usamos:
+
+$ pip freeze --local
+
+Para poder unstalar requeriemtos de paquetes para python usamos el siguiente comando:
+
+$ pip install -r requirements/local.txt 
+   
+Instalar  psycopg2 para la conexion entre postgrest y django:
+$ pip install  psycopg2-binary
+
+Para  crear la base de datos en postgrest ingresamos a postgres:
+$ su postgres
+
+Creamos la base dbuser:
+$ createdb dbuser
+
+Ingresamos a la base de datos:
+$ psql dbuser
+
+Damos permisos al usuario jose sobre la base de datos dbuser:
+$ alter user jose with password '12345';
+
+Ejecutamos el manage para verificar la configuración:
+$ python3 manage.py runserver --settings=usuarios.settings.local
+
+Si no funciona es que en la carpeta settings no se agregado el archivo:
+__init__.py para que se reconozca como paquete este va en blanco
+
+
+Para subir los cambios al repositorio se realiza un:
+
+git add. 
