@@ -38,6 +38,7 @@ def get_secret(secret_name, secrets=secret):
 SECRET_KEY = get_secret('SECRET_KEY')
 
 
+
 # Application definition
 
 # Apps from default django 
@@ -51,7 +52,9 @@ DJANGO_APPS = (
 )
 
 # Apps to local enviroment
-LOCAL_APPS = ()
+LOCAL_APPS = (
+    'applications.users',
+)
 
 # Apps from third persons 
 THIRD_PARTY_APPS = ()
@@ -110,7 +113,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+# Permite que se trabaje bajo otro modelo de usuarios, el modelo User que hemos creado
+AUTH_USER_MODEL = 'users.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

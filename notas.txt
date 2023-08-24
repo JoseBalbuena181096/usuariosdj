@@ -46,6 +46,27 @@ Si no funciona es que en la carpeta settings no se agregado el archivo:
 __init__.py para que se reconozca como paquete este va en blanco
 
 
-Para subir los cambios al repositorio se realiza un:
+Para subir los cambios al repositorio se realiza una snapshoot del repositorio:
+$ git add .
 
-git add. 
+Realizamos un commit guardar eso cambios:
+$ git commit -m "configuracion del proyecto"
+
+Para poder subir los cambios pero a github:
+$ git push origin main
+
+Para comenzar a crear las aplicaciones creamos una carpeta applications a la altuta del manager.py, tambien añadimos el archivo __init__.py
+
+Despues entramos en la carpeta applications y creamos la app home y users:
+$ django-admin startapp home
+$ django-admin startapp users
+
+Para crear una preparar una migracion de nuestro  model User a la db, usamos:
+$ python3 manage.py makemigrations
+
+Para crear ya realizar la migracion se usa el comando:
+$ python3 manage.py migrate
+
+Para creau un super usuario usamos el comando:
+$ python3 manage.py createsuperuser
+

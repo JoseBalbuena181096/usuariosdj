@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Panel de usuario </h1>
+    <h3>Bienvenido: {{user}}</h3>
+    <!-- <p>La fecha es {{fecha}}</p> -->
+    <ul>
+        <li><a href="{% url 'users_app:user-logout'%}">Cerrar sesion</a></li>
+        <li><a href="{% url 'users_app:user-update'%}">Actualizar datos</a></li>
+    </ul>
+</body>
+</html>

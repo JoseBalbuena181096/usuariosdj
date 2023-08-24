@@ -2,6 +2,20 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Email configuración
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# Activa el envio de emails con dejango
+# Iindicar el provedor de email
+EMAIL_HOST = 'smtp.gmail.com'
+# El email que envia el correo
+EMAIL_HOST_USER = get_secret('EMAIL')
+# Password de envio de correos para la app django tomado de google
+EMAIL_HOST_PASSWORD = get_secret('PASSWORD_EMAIL')
+# El puerto de envio del correo
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'default from email'
+
 ALLOWED_HOSTS = []
 
 # Database
